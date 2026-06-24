@@ -1,0 +1,10 @@
+[Unit]
+Description=Initialize GPIO PWM every boot
+After=k3s.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/opt/scripts/pwm-init.sh #move out of /etc/default/pwm-init.sh
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=k3s performance monitor: use GPIO to control fan PWM and RGB LED status
+After=k3s.service
+
+[Service]
+Type=simple
+ExecStart= /opt/scripts/perf-monitor.sh
+User=admin
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
